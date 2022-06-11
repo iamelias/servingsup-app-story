@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CoreDish" representedClassName="CoreDish" syncable="YES" codeGenerationType="class">
+        <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="editedServings" attributeType="Integer 16" defaultValueString="1" usesScalarValueType="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="isCurrentDish" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="lastEditedDate" optional="YES" attributeType="Date" defaultDateTimeInterval="669420060" usesScalarValueType="NO"/>
+        <attribute name="myUUID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" attributeType="String" defaultValueString="Untitled"/>
+        <attribute name="stepperValue" attributeType="Double" defaultValueString="1" usesScalarValueType="YES"/>
+        <attribute name="thumbnailImage" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <relationship name="ingredients" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CoreIngredient" inverseName="dish" inverseEntity="CoreIngredient"/>
+    </entity>
+    <entity name="CoreIngredient" representedClassName="CoreIngredient" syncable="YES" codeGenerationType="class">
+        <attribute name="amount" optional="YES" attributeType="Double" usesScalarValueType="YES"/>
+        <attribute name="checkName" attributeType="String" defaultValueString=""/>
+        <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="editedAmount" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="editedServings" attributeType="String" defaultValueString=""/>
+        <attribute name="modifiedIngredient" attributeType="String" defaultValueString=""/>
+        <attribute name="name" attributeType="String" defaultValueString=""/>
+        <attribute name="servings" attributeType="Integer 32" defaultValueString="1" usesScalarValueType="YES"/>
+        <attribute name="singleAmount" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="unit" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="unitType" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="dish" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDish" inverseName="ingredients" inverseEntity="CoreDish"/>
+    </entity>
+    <entity name="CoreSortOption" representedClassName="CoreSortOption" syncable="YES" codeGenerationType="class">
+        <attribute name="sort" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <elements>
+        <element name="CoreDish" positionX="-63" positionY="-18" width="128" height="179"/>
+        <element name="CoreIngredient" positionX="-54" positionY="-9" width="128" height="209"/>
+        <element name="CoreSortOption" positionX="-63" positionY="81" width="128" height="44"/>
+    </elements>
+</model>
